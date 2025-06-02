@@ -5,7 +5,8 @@
 // and then us object ke through hum run method ko call kar sakte hain
 public class Tes03 implements Runnable{
 
-  @Override
+    // here in this:- this is the running state of thread
+   @Override
     public void run() {
         for(int i = 0; i < 100000; i++) {
             System.out.println("Hello Amit");

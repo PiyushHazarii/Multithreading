@@ -18,8 +18,12 @@ public class Test {
         
 
         // this is test03 class
-        Tes03 t2 = new Tes03();
-        Thread t3 = new Thread(t2);
+        Tes03 t2 = new Tes03(); // this is the new state of thread
+        Thread t3 = new Thread(t2); // this is the runnable state of thread
         t3.start(); // this will call the run method of the Tes03 class
+
+
+        MyThread2 t4 = new MyThread2("Piyush");
+        t4.start(); // this will call the run method of the MyThread2 class
     }
 }
