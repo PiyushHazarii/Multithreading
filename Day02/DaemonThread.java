@@ -5,6 +5,7 @@ public class DaemonThread extends Thread {
             System.out.println("Hello world !");
         }
     }
+    
 
     public static void main(String[] args) {
         DaemonThread myThread = new DaemonThread();
