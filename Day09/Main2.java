@@ -26,16 +26,16 @@ public class Main2 {
         // executor.submit(() -> System.out.println("wsw")); // ❌ This will throw RejectedExecutionException if executed after shutdown
 
         // To calculate total time after all tasks complete, you'd ideally use awaitTermination or a CountDownLatch
-        // System.out.println("Total time: " + (System.currentTimeMillis() - startTime) + " ms");
-        // try {
-        //     // ye awaitTermination method boolean value return karega ya to true ya false
-        //     executor.awaitTermination(100, TimeUnit.SECONDS);
-        // } catch (InterruptedException e) {
-        //     throw new RuntimeException(e);
-        // }
+        System.out.println("Total time: " + (System.currentTimeMillis() - startTime) + " ms");
+        try {
+            // ye awaitTermination method boolean value return karega ya to true ya false
+            executor.awaitTermination(100, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         // Print total execution time
-       // System.out.println("Total time: " + (System.currentTimeMillis() - startTime) + " ms");
+        System.out.println("Total time: " + (System.currentTimeMillis() - startTime) + " ms");
     }
 
     // Factorial method

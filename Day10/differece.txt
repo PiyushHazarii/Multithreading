@@ -1,0 +1,26 @@
+| Feature / Aspect                | **Executor**                            | **ExecutorService**                                | **ScheduledExecutorService**                                      |
+| ------------------------------- | --------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------- |
+| **Belongs to Package**          | `java.util.concurrent`                  | `java.util.concurrent`                             | `java.util.concurrent`                                            |
+
+| **Interface Type**              | Basic Interface                         | Extended Interface                                 | Specialized Sub-interface                                         |
+
+| **Introduced In**               | Java 5                                  | Java 5                                             | Java 5                                                            |
+
+| **Main Purpose**                | Executes a Runnable task                | Manages and controls thread lifecycle              | Schedules tasks to run after a delay or periodically              |
+
+| **Basic Method(s)**             | `void execute(Runnable command)`        | `submit()`, `invokeAll()`, `shutdown()` etc.       | `schedule()`, `scheduleAtFixedRate()`, `scheduleWithFixedDelay()` |
+
+| **Supports Return Values?**     | ❌ No                                    | ✅ Yes (`Future`)                                   | ✅ Yes (`ScheduledFuture`)                                         |
+
+| **Shutdown Control**            | ❌ No                                    | ✅ Yes (`shutdown()`, `awaitTermination()`)         | ✅ Yes (inherited from `ExecutorService`)                          |
+
+| **Task Scheduling**             | ❌ Not Supported                         | ❌ Not Supported                                    | ✅ Supported (delayed and periodic tasks)                          |
+
+| **Periodic Task Execution**     | ❌ No                                    | ❌ No                                               | ✅ Yes                                                             |
+
+| **Common Implementation Class** | `ThreadPoolExecutor`, `ExecutorService` | `ThreadPoolExecutor`, `ForkJoinPool`               | `ScheduledThreadPoolExecutor`                                     |
+
+| **Use Case Example**            | Run a single task asynchronously        | Manage a pool of threads, submit tasks with result | Run tasks repeatedly at a fixed rate (e.g., cron jobs)            |
+
+| **Can Return Future Object?**   | ❌ No                                    | ✅ Yes                                              | ✅ Yes                                                             |
+
