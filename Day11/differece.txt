@@ -1,0 +1,12 @@
+| Feature                 | `newFixedThreadPool(int n)`                       | `newCachedThreadPool()`                                            |
+| ----------------------- | ------------------------------------------------- | ------------------------------------------------------------------ |
+| **Thread Count**        | Fixed number of threads (`n` threads).            | Dynamic — creates new threads as needed, reuses old ones.          |
+| **Use Case**            | When you know the exact number of threads needed. | When tasks are short-lived and frequent.                           |
+| **Thread Reuse**        | Yes, idle threads are reused.                     | Yes, but only if threads are still alive.                          |
+| **Max Threads**         | Limited to `n` threads.                           | Practically unbounded (up to `Integer.MAX_VALUE`).                 |
+| **Queue Type**          | Uses a **LinkedBlockingQueue** (unbounded).       | Uses a **SynchronousQueue** (no internal queueing).                |
+| **Performance**         | More predictable performance due to fixed size.   | Can be faster in bursty situations but may consume more resources. |
+| **Risk**                | Can cause queue buildup if many tasks come in.    | Can exhaust system resources (CPU/memory) with too many threads.   |
+| **Idle Thread Timeout** | Threads stay alive indefinitely.                  | Threads time out after **60 seconds** of inactivity.               |
+| **Example**             | `Executors.newFixedThreadPool(4)`                 | `Executors.newCachedThreadPool()`                                  |
+| **Best For**            | CPU-bound tasks or limited parallelism.           | Many short, asynchronous, or network I/O tasks.                    |

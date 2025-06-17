@@ -2,7 +2,7 @@ public class Test {
     public static void main(String[] args) {
         Counter counter = new Counter();
         MyThread thread1 = new MyThread(counter);
-        MyThread thread2 = new MyThread(counter);
+        MyThread thread2 = new MyyThread(counter);
         thread1.start();
         thread2.start();
         try {

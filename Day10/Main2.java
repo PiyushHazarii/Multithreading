@@ -1,7 +1,7 @@
 import java.util.concurrent.*;
 
 public class Main2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         ExecutorService executorService = Executors.newSingleThreadExecutor();
 
         Future<Integer> future = executorService.submit(() -> {
@@ -12,8 +12,9 @@ public class Main2 {
             }
             return 42;
         });
-
-        future.cancel(true); // agar ye true hai to chahe chal raha ho task ya nahi chal raha ho to bhi wo 
+        // System.out.println(future.get());
+        
+        // future.cancel(true); // agar ye true hai to chahe chal raha ho task ya nahi chal raha ho to bhi wo 
                              // task ko cancel karega.
         future.cancel(false); // agar ye false hai to jo task chal raha hai usko interrupt nahi karega.
 

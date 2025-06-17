@@ -11,11 +11,17 @@ public class Main2 {
             5, // repeat every
             TimeUnit.SECONDS
         );
+        // agar direct scheduleAtFixedRate use karte hai to wo kuch print hi nhi karega 
+        // kyuki wo fixed rate pr chalega to har baar fixed rate pr chalega 
+        // wo queue me hi rahega aur kabhi bhi execute nhi hoga direct shutdown ho jayega. 
 
         // Schedule shutdown after 10 seconds
         scheduler.schedule(() -> {
             System.out.println("Initiating shutdown...");
             scheduler.shutdown();
-        }, 20, TimeUnit.SECONDS);
+            }, 
+            20, // delay before shutdown matlab 20 seconds ke baad shutdown karega
+            TimeUnit.SECONDS
+        );
     }
 }

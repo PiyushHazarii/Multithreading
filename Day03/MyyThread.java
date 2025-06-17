@@ -1,7 +1,8 @@
-public class MyThread extends Thread {
+
+public class MyyThread extends Thread {
     private Counter counter;
 
-    public MyThread(Counter counter) {
+    public MyyThread(Counter counter) {
         this.counter = counter;
     }
 

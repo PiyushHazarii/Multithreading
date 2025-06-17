@@ -29,6 +29,8 @@ public class Main6 {
 
         try {
             // Invoke all Callables and get a list of Futures
+            // collection of task le raha hai and usko execute kr raha hai
+            // and return a list of Future objects
             List<Future<Integer>> futures = executorService.invokeAll(list);
 
             // Iterate through the Futures and get the results
